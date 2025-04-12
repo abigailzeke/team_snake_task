@@ -1,0 +1,23 @@
+## Suitable Solutions for Team Snake Web App
+
+### Security
+
+Place the load balancer in a DMZ behind a firewall for secure external access. 
+The load balancer (e.g. HA Proxy) can also have reverse proxy (NGINX) to handle incoming traffic.
+TLS termination at the load balancer. Use isolated, private subnets for the payment processor integration service, database and redis cache. 
+Restrict internal communication via security groups or similar features.
+
+### High Availabilty / Reliability / Scalability
+
+Host the DB and Redis cache in multi-AZ clusters with failover mechanism. 
+Web servers, API servers and app servers can be deployed in auto scaling groups (for on-prem use VM orchestration, or use AGS in AWS).
+
+### Performance
+
+Use Redis cache and keep Web and API services stateless so new instances can be quickly and automatically provisioned. Optionally use a CDN and offload static files to CDN for global distribution of content.
+
+### Observability
+
+LEverage Prometheus to collect metrics from all servers, services and databases. 
+Visualise metrics on Grafana.
+Centralise logging with ELK Stack.
