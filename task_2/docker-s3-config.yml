@@ -1,0 +1,15 @@
+# RUN LIKE BELOW
+# docker run -d --name abi-registry -p 5000:5000 \ 
+# -e REGISTRY_STORAGE=s3 -e REGISTRY_STORAGE_S3_REGION=ap-southeast-1 \
+# -e REGISTRY_STORAGE_S3_BUCKET=abi-bucket-snake \
+# -e AWS_ACCESS_KEY_ID={ACCESS KEY} \
+# -e AWS_SECRET_ACCESS_KEY={SECRET KEY} \
+# -v $(pwd)/config.yml:/etc/docker/registry/config.yml registry:2
+
+version: 0.1
+storage:
+  s3:
+    region: us-east-1
+    bucket: my-bucket
+http:
+  addr: 0.0.0.0:5000
