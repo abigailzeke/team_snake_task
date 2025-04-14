@@ -8,6 +8,7 @@
 6. Push image to private registry (`docker push`)
 7. Run yeasy/simple-web container (from private registry) on port 8080
 8. Configure nginx as reverse proxy + load balancer (refer to nginx.conf)
+9. (Optional) Include upstream address in nginx logs to see load balancing in action. (`'upstream=$upstream_addr' ` in http block nginx.conf)
 
 Please refer to yeasy_simple_web.png for the web page screenshot and running_containers.png for my running containers cli output.
 Please refer to load_balancing.png for nginx load balancing in action.
