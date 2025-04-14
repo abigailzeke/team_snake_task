@@ -10,3 +10,4 @@
 8. Configure nginx as reverse proxy + load balancer (refer to nginx.conf)
 
 Please refer to yeasy_simple_web.png for the web page screenshot and running_containers.png for my running containers cli output.
+Please refer to load_balancing.png for nginx load balancing in action.
